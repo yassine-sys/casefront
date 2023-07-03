@@ -1,0 +1,32 @@
+/* Custom CSS for Advanced Login Template */
+div.card-body{
+    background-color: #ffffff; /* Set the background color of the page */
+
+}
+
+
+/* Center the login form vertically and horizontally */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #bdc1c5; /* Set the background color of the page */
+  }
+  
+  /* Add margin to the card body */
+  .card-body {
+    margin: 0 auto;
+    border-radius: 4px; /* Add border radius to the card */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow to the card */
+  }
+  
+
+  
+  /* Center the login button horizontally */
+  button.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
