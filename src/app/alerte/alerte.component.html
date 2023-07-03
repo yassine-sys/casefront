@@ -1,0 +1,44 @@
+<div class="container">
+  <h2>Alerte</h2>
+  <hr>
+ 
+
+  <table class="table table-striped"  >
+      <thead>
+        <tr>
+          <th scope="col">date Detection</th>
+          <th scope="col">date Appel</th>
+          <th scope="col">Etat</th>
+          <th scope="col"> rule</th>
+          <th scope="col">Description Rule</th>
+          <th scope="col"> seuil</th>
+          <th scope="col">Function</th>
+          <th scope="col">valeur</th>
+          <th scope="col">status</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of pageSlice " (click)="openRowDetails(u)" [ngClass]="{ 'hover': true }">
+          <td>{{ u.dateDetection  }} </td>
+          <td>{{ u.dateappel  }} </td>
+          <td>{{ u.etat  }} </td>
+          <td>{{ u.idRule  }} </td>
+          <td>{{ u.namerule }} </td>
+          <td>{{ u.seuil  }} </td>
+          <td>{{ u.function  }} </td>
+          <td>{{ u.valeur  }} </td>
+         
+          <td>{{ u.status  }} </td>
+        
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-outline-success" mat-button (click)="openRowDetailsDialog()" [disabled]="!selectedRowData">Assign User</button>
+    <button class="btn btn-outline-danger" mat-button (click)="closeAlert()" [disabled]="!selectedRowData">Close Alert</button>
+
+
+    <mat-paginator [length]="alerts.length" [pageSize]="10" (page)="onPageChange($event)"></mat-paginator>
+
+  </div> 
+

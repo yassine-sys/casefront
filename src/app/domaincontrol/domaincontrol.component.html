@@ -1,0 +1,32 @@
+<div>
+  <h2>Domain Control</h2> 
+  <hr> 
+<table class="table table-striped">
+    <thead>
+      <tr>
+        
+        <th scope="col">Domain Control</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dom of domaincontrol">
+        <td>{{ dom.domain  }}</td>
+        <td style="text-align: right;">
+          <button style="float: right;" (click)="performDeleteDomain(dom)" class="btn btn-outline-danger" title="Supprimer">
+          <i class="ui-icon ui-icon-trash"></i>
+          delete
+        </button>
+        <button style="float: right; margin-right: 10px;" (click)="openUpdateModal(dom)" class="btn btn-outline-secondary" title="Edit">
+          <i class="ui-icon ui-icon-edit"></i>
+          edit
+        </button>
+      </td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+ 
+</div>
+<button class="btn btn-outline-success" (click)="openModal()">Add</button>

@@ -1,0 +1,93 @@
+/* Styling for the c-header component */
+c-header {
+  background-color: #ffffffd5;
+  color: #fcfbfb;
+  padding:7,5px;
+  width: 100%;
+}
+
+/* Styling for the header container */
+c-container[fluid="true"] {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Styling for the header toggler button */
+button[cHeaderToggler] {
+  background-color: transparent;
+  border: none;
+  color: #423838;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Styling for the header navigation items */
+c-header-nav {
+  display: flex;
+  align-items: center;
+}
+
+c-header-nav c-nav-item {
+  margin-right: 10px;
+}
+
+c-header-nav a {
+  color: #2e3847d5;
+
+}
+
+/* Styling for the user dropdown */
+c-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+c-dropdown .c-dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+c-dropdown ul {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  list-style: none;
+  background-color: #2e3847d5;
+  padding: 5px 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(219, 23, 23, 0.1);
+}
+
+c-dropdown ul li {
+  padding: 5px;
+}
+
+c-dropdown ul li a {
+  color: #fffcfcef;
+  text-decoration: none;
+}
+
+.navbar {
+
+      background-color: transparent; /* Set the background color to transparent */
+      border-color: transparent; /* Set the border color to transparent */
+      box-shadow: none; /* Remove any box shadow */
+  
+
+}
+c-nav-item{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+
+

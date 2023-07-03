@@ -1,0 +1,52 @@
+.sidebar {
+  background-color: #2e3847d5;
+
+}
+
+.c-sidebar>.active>a {
+  background-color: #020101;
+  color: rgb(0, 110, 184);
+}
+
+
+// Définir les styles personnalisés pour le layout par défaut
+.body {
+  background-color:  #fffbfbd5; // Remplacez par la couleur grise souhaitée à partir des variables Bootstrap
+}
+
+.header {
+  background-color:  #ffffffd5; // Remplacez par la couleur grise souhaitée à partir des variables Bootstrap
+}
+
+.footer {
+  background-color:  #ffffffd5; // Remplacez par la couleur grise souhaitée à partir des variables Bootstrap
+}
+
+.search-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #dee2e6; /* Add a bottom border */
+}
+
+.search-panel input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ced4da; /* Add a border to the input field */
+  border-radius: 4px;
+}
+
+.search-panel button {
+  padding: 5px 10px;
+  background-color: #84d17d; /* Set the background color of the search button */
+ /* Set the text color of the search button */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-panel button:hover {
+  background-color: #84d17d; /* Set a different background color on hover */
+}

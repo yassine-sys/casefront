@@ -1,0 +1,48 @@
+<!--sidebar-->
+<c-sidebar
+  #sidebar="cSidebar"
+  class="d-print-none sidebar sidebar-fixed 
+  class: 'mt-2'
+  "
+  id="sidebar"
+  visible
+
+
+>
+  <c-sidebar-brand
+    [brandFull]="{
+      src: 'assets/img/brand/coreui-angular.png',
+      width: 88,
+      height:66,
+      alt: ' Logo',
+      class: 'mt-2'
+    }"
+   
+    routerLink="./"
+  />
+
+
+  <ng-scrollbar pointerEventsMethod="scrollbar" >
+    <c-sidebar-nav 
+      [navItems]="navItems" 
+      dropdownMode="close"
+      
+    />
+
+  </ng-scrollbar>
+
+</c-sidebar>
+
+<!--main-->
+<div class="wrapper d-flex flex-column min-vh-100 ">
+  <!--app-header-->
+  <app-navbar class="mb-3 d-print-none header header-sticky" position="sticky" sidebarId="sidebar" />
+  <!--app-body-->
+  <div class="body flex-grow-1 px-3 ">
+    <c-container breakpoint="lg" class="h-auto">
+      <router-outlet/>
+    </c-container>
+  </div>
+  <!--app footer-->
+  <app-default-footer/>
+</div>
