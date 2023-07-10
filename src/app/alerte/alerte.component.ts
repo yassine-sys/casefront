@@ -4,6 +4,7 @@ import { FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { RowDetailsDialogComponent } from '../row-details-dialog/row-details-dialog.component';
+import { SigninService } from '../service/signin.service';
 
 @Component({
   selector: 'app-alerte',
@@ -15,6 +16,7 @@ export class AlerteComponent implements OnInit{
 alerts:any
 pageSlice: any;
 selectedRowData: any;
+user:any
 
 
 @ViewChild(MatPaginator) paginator!: MatPaginator ;
@@ -23,11 +25,18 @@ selectedRowData: any;
 
 constructor( private formBuilder: FormBuilder,
   private alertService:AlerteService ,
-  private dialog: MatDialog) {}
+  private dialog: MatDialog,
+  private siginServive:SigninService) {}
 
   ngOnInit() {
+    this.siginServive.user.subscribe((data:any)=>{
+      this.user =data
+      console.log('after emit',this.user)
+      console.log('after emit',data)
+    })
 
     this.listalert()
+    
 
   }
 

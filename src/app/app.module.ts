@@ -69,6 +69,10 @@ import { AlerteComponent } from './alerte/alerte.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { RowDetailsDialogComponent } from './row-details-dialog/row-details-dialog.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginComponent } from './views/pages/login/login.component';
+import { SigninComponent } from './signin/signin.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 
 
@@ -76,10 +80,11 @@ const APP_CONTAINERS = [
   DefaultFooterComponent,
   navbarComponent,
   DefaultLayoutComponent
+  
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, AccueilComponent, UsermanagementComponent, DomaincontrolComponent, RevenuestreamComponent, RaruleComponent, AdddomainComponent, AddrevenueComponent, AdduserComponent, AddraruleComponent, AddparamComponent, AddrapportComponent, EditrevenueComponent, EditdomComponent, EdituserComponent, EditraruleComponent, EditparamComponent, EditreportComponent, AlerteComponent, RowDetailsDialogComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, AccueilComponent, UsermanagementComponent, DomaincontrolComponent, RevenuestreamComponent, RaruleComponent, AdddomainComponent, AddrevenueComponent, AdduserComponent, AddraruleComponent, AddparamComponent, AddrapportComponent, EditrevenueComponent, EditdomComponent, EdituserComponent, EditraruleComponent, EditparamComponent, EditreportComponent, AlerteComponent, RowDetailsDialogComponent, SigninComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -117,11 +122,11 @@ const APP_CONTAINERS = [
     MatCheckboxModule,
     MatSelectModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
 
     
   ],
-  providers: [
+  providers: [AuthGuard, AuthService,
     
     {
       

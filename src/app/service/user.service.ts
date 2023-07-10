@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class UserService {
 
   private baseUrl ='http://127.0.0.1:8080/CaseTools-0.0.1-SNAPSHOT/rest/case'
+// private baseUrl ='http://10.82.11.8:8080/CaseTools/rest/case'
 
 
   constructor(private http: HttpClient) { }
@@ -36,5 +37,16 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/assignAlertUser`,alerts);
   }
 
+  // login(login: string, password: string) {
+  //   const loginData = {
+  //     login: login,
+  //     password: password
+  //   };
+  //   return this.http.post(`${this.baseUrl}/login`, loginData);
+  // }
+  login(loginData: any){
+   
+    return this.http.post<any>(`${this.baseUrl}/auth`, loginData);
+  }
 
 }

@@ -34,7 +34,7 @@
         </tr>
       </tbody>
     </table>
-    <button class="btn btn-outline-success" mat-button (click)="openRowDetailsDialog()" [disabled]="!selectedRowData">Assign User</button>
+    <button *ngIf="user.assignedTo" class="btn btn-outline-success" mat-button (click)="openRowDetailsDialog()" [disabled]="!selectedRowData">Assign User</button>
     <button class="btn btn-outline-danger" mat-button (click)="closeAlert()" [disabled]="!selectedRowData">Close Alert</button>
 
 

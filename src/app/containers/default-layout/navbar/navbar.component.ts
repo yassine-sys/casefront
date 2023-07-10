@@ -3,6 +3,8 @@ import { Component, Input, Renderer2 } from '@angular/core';
 
 
 import { ClassToggleService, HeaderComponent, NavbarComponent } from '@coreui/angular';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +22,7 @@ export class navbarComponent extends HeaderComponent {
   public searchForm: FormGroup; // Create a FormGroup for the search form
   public searchTerm: FormControl; // Create a FormControl for the search term
 
-  constructor(private classToggler: ClassToggleService) {
+  constructor(private classToggler: ClassToggleService,private authService: AuthService,private router:Router) {
     super();
     this.searchTerm = new FormControl(''); // Initialize the search term FormControl
     this.searchForm = new FormGroup({
@@ -33,6 +35,12 @@ export class navbarComponent extends HeaderComponent {
     const searchTerm = this.searchTerm.value; // Get the value of the search term
     // Perform your search logic here, e.g., make an API call or filter the data
     console.log('Search term:', searchTerm);
+  }
+
+  onLogout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+    // Additional logout actions if needed
   }
 }
 

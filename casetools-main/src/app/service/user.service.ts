@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private baseUrl ='http://10.82.11.8:8080/CaseTools/rest/case'
-
+//  private baseUrl ='http://10.82.11.8:8080/CaseTools/rest/case'
+  private baseUrl ='http://127.0.0.1:8080/CaseTools-0.0.1-SNAPSHOT/rest/case'
 
   constructor(private http: HttpClient) { }
 
@@ -31,6 +31,15 @@ export class UserService {
   public editUser(id:any,user:any){
     return this.http.put(`${this.baseUrl}/edituser/${id}`,user);
   }
+
+  login(login: string, password: string) {
+    const loginData = {
+      login: login,
+      password: password
+    };
+    return this.http.post(`${this.baseUrl}/login`, loginData);
+  }
+
 
 
 }

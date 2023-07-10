@@ -1,0 +1,36 @@
+<div class="bg-light min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4" >
+          <div class="card p-4">
+            <div class="card-body">
+              <form (ngSubmit)="onSubmit()">
+                <h1>Login</h1>
+                <p class="text-medium-emphasis">Sign in to your account</p>
+                <div class="input-group mb-3">
+                  <span class="input-group-text">
+                   
+                  </span>
+                  <input autocomplete="login" class="form-control" placeholder="Login" [(ngModel)]="loginData.login" name="login"/>
+                </div>
+                <div class="input-group mb-4">
+                  <span class="input-group-text">
+                   
+                  </span>
+                  <input autocomplete="current-password" class="form-control" placeholder="Password" type="password" [(ngModel)]="loginData.password" 
+                  name="password"/>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <button class="btn btn-outline-success btn-block">Login</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

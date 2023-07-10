@@ -13,16 +13,18 @@ import { RaruleComponent } from './rarule/rarule.component';
 import { RevenuestreamComponent } from './revenuestream/revenuestream.component';
 import { AlertComponent } from '@coreui/angular';
 import { AlerteComponent } from './alerte/alerte.component';
+import { SigninComponent } from './signin/signin.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
- {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
+//  {
+//     path: '',
+//     redirectTo: 'login',
+//     pathMatch: 'full'
+//   },
   {
     path: 'login',
-    component: LoginComponent,
+    component: SigninComponent,
     data: {
       title: 'Login Page'
     }
@@ -30,36 +32,52 @@ const routes: Routes = [
   {
     path: '',
     component: DefaultLayoutComponent,
+    canActivate: [AuthGuard],
     data: {
       title: 'Home'
     },
+    
     children: [
       {
         path: 'alerte',
-       component:AlerteComponent
+       component:AlerteComponent,
+       canActivate: [AuthGuard]
       },
       {
         path: 'usermanagement',
-       component:UsermanagementComponent
+       component:UsermanagementComponent,
+       canActivate: [AuthGuard]
       },
       {
         path: 'domaincontrol',
-       component:DomaincontrolComponent
+       component:DomaincontrolComponent,
+       canActivate: [AuthGuard]
       },
       {
         path: 'accueil',
-       component:AccueilComponent
+       component:AccueilComponent,
+       canActivate: [AuthGuard]
       },
       {
         path: 'rarule',
-       component:RaruleComponent
+       component:RaruleComponent,
+       canActivate: [AuthGuard]
       },
       {
         path: 'revenuestream',
-       component:RevenuestreamComponent
+       component:RevenuestreamComponent,
+       canActivate: [AuthGuard]
+      },
+      {
+        path: 'accueil',
+       component:AccueilComponent,
+       canActivate: [AuthGuard]
       },
       {
         path: 'dashboard',
+        canActivate: [AuthGuard],
+        
+
         loadChildren: () =>
           import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
       },
@@ -132,7 +150,7 @@ const routes: Routes = [
       title: 'Register Page'
     }
   },
-  {path: '**', redirectTo: 'login'}
+  // {path: '**', redirectTo: 'login'}
 ];
 
 @NgModule({

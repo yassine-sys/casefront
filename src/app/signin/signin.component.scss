@@ -1,0 +1,28 @@
+div.card-body{
+    background-color: #ffffff; /* Set the background color of the page */
+
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #bdc1c5; 
+  
+  .card-body {
+    margin: 0 auto;
+    border-radius: 4px; /* Add border radius to the card */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow to the card */
+  }
+  
+
+  
+  button.btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}

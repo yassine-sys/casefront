@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DomaincontrolService {
-  private baseUrl ='http://127.0.0.1:8080/CaseTools-0.0.1-SNAPSHOT/rest/case'
+//  private baseUrl ='http://127.0.0.1:8080/CaseTools-0.0.1-SNAPSHOT/rest/case'
+private baseUrl ='http://10.82.11.8:8080/CaseTools/rest/case'
 
   constructor(private http: HttpClient) { }
 
